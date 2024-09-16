@@ -8,6 +8,8 @@ from communication_skills_assessment import communication_skills_assessment
 from digital_literacy_assessment import digital_literacy_assessment
 from self_management_assessment import self_management_assessment
 from leadership_assessment import leadership_assessment
+from global_citizenship_assessment import global_citizenship_assessment
+
 # Page configuration (called only once and at the top)
 st.set_page_config(
     page_title="MindMetr Child Assessment | تقييم الطفل المرتكز على العقل",
@@ -180,8 +182,8 @@ if selected_field == "Self-Management (إدارة الذات)":
 if selected_field == "Leadership (القيادة)":
     st.image(f"{image_base_path}leadership.png", width=200)
     leadership_assessment()  # Call the leadership assessment function
-elif selected_field == "Global Citizenship (المواطنة العالمية)":
+if selected_field == "Global Citizenship (المواطنة العالمية)":
     st.image(f"{image_base_path}global.png", width=200)
-    st.write("Placeholder: Global Citizenship assessment will be shown here. | التقييم الخاص بالمواطنة العالمية سيتم عرضه هنا.")
+    global_citizenship_assessment()  # Call the global citizenship assessment function
 else:
     st.write(f"Assessment for {selected_field} is coming soon. | التقييم الخاص بـ {selected_field} قادم قريباً.")
