@@ -57,8 +57,11 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Display the MindMetr logo with the correct path
-st.image("C:/Users/tamer/Desktop/MindMetrApp/images/logo.png", width=120)
+# Adjust image path to WSL-compatible format
+image_base_path = "/mnt/c/Users/tamer/Desktop/MindMetrApp/images/"
+
+# Display the MindMetr logo with the WSL path
+st.image(f"{image_base_path}logo.png", width=120)
 
 # Main title and description (English and Arabic)
 st.title("Mind-Centric Child Assessment Framework (MCAF) | إطار تقييم الطفل المرتكز على العقل (MCAF)")
@@ -144,31 +147,31 @@ selected_field = st.selectbox("Select a domain to assess | اختر مجالًا
 if selected_field == "Cognitive Development (التطور المعرفي)":
     cognitive_assessment()  # This will call the cognitive assessment function
 elif selected_field == "Social Interaction (التفاعل الاجتماعي)":
-    st.image("C:/Users/tamer/Desktop/MindMetrApp/images/social.png", width=200)
+    st.image("/mnt/c/Users/tamer/Desktop/MindMetrApp/images/social.png", width=200)
     st.write("Placeholder: Social Interaction assessment will be shown here. | التقييم الخاص بالتفاعل الاجتماعي سيتم عرضه هنا.")
 elif selected_field == "Critical Thinking (التفكير النقدي)":
-    st.image("C:/Users/tamer/Desktop/MindMetrApp/images/critical.png", width=200)
+    st.image("/mnt/c/Users/tamer/Desktop/MindMetrApp/images/critical.png", width=200)
     st.write("Placeholder: Critical Thinking assessment will be shown here. | التقييم الخاص بالتفكير النقدي سيتم عرضه هنا.")
 elif selected_field == "Creative Thinking (التفكير الإبداعي)":
-    st.image("C:/Users/tamer/Desktop/MindMetrApp/images/creative.png", width=200)
+    st.image("/mnt/c/Users/tamer/Desktop/MindMetrApp/images/creative.png", width=200)
     st.write("Placeholder: Creative Thinking assessment will be shown here. | التقييم الخاص بالتفكير الإبداعي سيتم عرضه هنا.")
 elif selected_field == "Emotional Intelligence (الذكاء العاطفي)":
-    st.image("C:/Users/tamer/Desktop/MindMetrApp/images/emotional.png", width=200)
+    st.image("/mnt/c/Users/tamer/Desktop/MindMetrApp/images/emotional.png", width=200)
     st.write("Placeholder: Emotional Intelligence assessment will be shown here. | التقييم الخاص بالذكاء العاطفي سيتم عرضه هنا.")
 elif selected_field == "Communication Skills (مهارات التواصل)":
-    st.image("C:/Users/tamer/Desktop/MindMetrApp/images/communication.png", width=200)
+    st.image("/mnt/c/Users/tamer/Desktop/MindMetrApp/images/communication.png", width=200)
     st.write("Placeholder: Communication Skills assessment will be shown here. | التقييم الخاص بمهارات التواصل سيتم عرضه هنا.")
 elif selected_field == "Digital Literacy (الإلمام الرقمي)":
-    st.image("C:/Users/tamer/Desktop/MindMetrApp/images/digital.png", width=200)
+    st.image("/mnt/c/Users/tamer/Desktop/MindMetrApp/images/digital.png", width=200)
     st.write("Placeholder: Digital Literacy assessment will be shown here. | التقييم الخاص بالإلمام الرقمي سيتم عرضه هنا.")
 elif selected_field == "Self-Management (إدارة الذات)":
-    st.image("C:/Users/tamer/Desktop/MindMetrApp/images/self.png", width=200)
+    st.image("/mnt/c/Users/tamer/Desktop/MindMetrApp/images/self.png", width=200)
     st.write("Placeholder: Self-Management assessment will be shown here. | التقييم الخاص بإدارة الذات سيتم عرضه هنا.")
 elif selected_field == "Leadership (القيادة)":
-    st.image("C:/Users/tamer/Desktop/MindMetrApp/images/leadership.png", width=200)
+    st.image("/mnt/c/Users/tamer/Desktop/MindMetrApp/images/leadership.png", width=200)
     st.write("Placeholder: Leadership assessment will be shown here. | التقييم الخاص بالقيادة سيتم عرضه هنا.")
 elif selected_field == "Global Citizenship (المواطنة العالمية)":
-    st.image("C:/Users/tamer/Desktop/MindMetrApp/images/global.png", width=200)
+    st.image("/mnt/c/Users/tamer/Desktop/MindMetrApp/images/global.png", width=200)
     st.write("Placeholder: Global Citizenship assessment will be shown here. | التقييم الخاص بالمواطنة العالمية سيتم عرضه هنا.")
 else:
     st.write(f"Assessment for {selected_field} is coming soon. | التقييم الخاص بـ {selected_field} قادم قريباً.")
