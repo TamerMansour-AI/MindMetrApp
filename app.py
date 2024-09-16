@@ -6,6 +6,7 @@ from creative_thinking_assessment import creative_thinking_assessment
 from emotional_intelligence_assessment import emotional_intelligence_assessment
 from communication_skills_assessment import communication_skills_assessment
 from digital_literacy_assessment import digital_literacy_assessment
+from self_management_assessment import self_management_assessment
 
 # Page configuration (called only once and at the top)
 st.set_page_config(
@@ -173,9 +174,9 @@ if selected_field == "Communication Skills (مهارات التواصل)":
 if selected_field == "Digital Literacy (الإلمام الرقمي)":
     st.image(f"{image_base_path}digital.png", width=200)
     digital_literacy_assessment()  # Call the digital literacy assessment function
-elif selected_field == "Self-Management (إدارة الذات)":
+if selected_field == "Self-Management (إدارة الذات)":
     st.image(f"{image_base_path}self.png", width=200)
-    st.write("Placeholder: Self-Management assessment will be shown here. | التقييم الخاص بإدارة الذات سيتم عرضه هنا.")
+    self_management_assessment()  # Call the self management assessment function
 elif selected_field == "Leadership (القيادة)":
     st.image(f"{image_base_path}leadership.png", width=200)
     st.write("Placeholder: Leadership assessment will be shown here. | التقييم الخاص بالقيادة سيتم عرضه هنا.")
