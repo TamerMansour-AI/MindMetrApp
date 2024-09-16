@@ -2,6 +2,7 @@ import streamlit as st
 from cognitive_assessment import cognitive_assessment
 from social_interaction_assessment import social_interaction_assessment
 from critical_thinking_assessment import critical_thinking_assessment
+from creative_thinking_assessment import creative_thinking_assessment
 
 # Page configuration (called only once and at the top)
 st.set_page_config(
@@ -157,9 +158,9 @@ if selected_field == "Social Interaction (التفاعل الاجتماعي)":
 if selected_field == "Critical Thinking (التفكير النقدي)":
     st.image(f"{image_base_path}critical.png", width=200)
     critical_thinking_assessment()  # Call the critical thinking assessment function
-elif selected_field == "Creative Thinking (التفكير الإبداعي)":
+if selected_field == "Creative Thinking (التفكير الإبداعي)":
     st.image(f"{image_base_path}creative.png", width=200)
-    st.write("Placeholder: Creative Thinking assessment will be shown here. | التقييم الخاص بالتفكير الإبداعي سيتم عرضه هنا.")
+    creative_thinking_assessment()  # Call the creative thinking assessment function
 elif selected_field == "Emotional Intelligence (الذكاء العاطفي)":
     st.image(f"{image_base_path}emotional.png", width=200)
     st.write("Placeholder: Emotional Intelligence assessment will be shown here. | التقييم الخاص بالذكاء العاطفي سيتم عرضه هنا.")
