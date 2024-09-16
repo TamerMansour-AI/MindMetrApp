@@ -4,6 +4,7 @@ from social_interaction_assessment import social_interaction_assessment
 from critical_thinking_assessment import critical_thinking_assessment
 from creative_thinking_assessment import creative_thinking_assessment
 from emotional_intelligence_assessment import emotional_intelligence_assessment
+from communication_skills_assessment import communication_skills_assessment
 
 # Page configuration (called only once and at the top)
 st.set_page_config(
@@ -165,9 +166,9 @@ if selected_field == "Creative Thinking (التفكير الإبداعي)":
 if selected_field == "Emotional Intelligence (الذكاء العاطفي)":
     st.image(f"{image_base_path}emotional.png", width=200)
     emotional_intelligence_assessment()  # Call the emotional intelligence assessment function
-elif selected_field == "Communication Skills (مهارات التواصل)":
+if selected_field == "Communication Skills (مهارات التواصل)":
     st.image(f"{image_base_path}communication.png", width=200)
-    st.write("Placeholder: Communication Skills assessment will be shown here. | التقييم الخاص بمهارات التواصل سيتم عرضه هنا.")
+    communication_skills_assessment()  # Call the communication skills assessment function
 elif selected_field == "Digital Literacy (الإلمام الرقمي)":
     st.image(f"{image_base_path}digital.png", width=200)
     st.write("Placeholder: Digital Literacy assessment will be shown here. | التقييم الخاص بالإلمام الرقمي سيتم عرضه هنا.")
