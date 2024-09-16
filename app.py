@@ -1,5 +1,6 @@
 import streamlit as st
 from cognitive_assessment import cognitive_assessment
+from social_interaction_assessment import social_interaction_assessment
 
 # Page configuration (called only once and at the top)
 st.set_page_config(
@@ -148,9 +149,8 @@ selected_field = st.selectbox("Select a domain to assess | اختر مجالًا
 # Display the appropriate assessment or a message based on selection
 if selected_field == "Cognitive Development (التطور المعرفي)":
     cognitive_assessment()  # This will call the cognitive assessment function
-elif selected_field == "Social Interaction (التفاعل الاجتماعي)":
-    st.image(f"{image_base_path}social.png", width=200)
-    st.write("Placeholder: Social Interaction assessment will be shown here. | التقييم الخاص بالتفاعل الاجتماعي سيتم عرضه هنا.")
+if selected_field == "Social Interaction (التفاعل الاجتماعي)":
+    social_interaction_assessment()  # This will call the social interaction assessment function
 elif selected_field == "Critical Thinking (التفكير النقدي)":
     st.image(f"{image_base_path}critical.png", width=200)
     st.write("Placeholder: Critical Thinking assessment will be shown here. | التقييم الخاص بالتفكير النقدي سيتم عرضه هنا.")
