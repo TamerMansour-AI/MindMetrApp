@@ -1,9 +1,12 @@
 import streamlit as st
 from cognitive_assessment import cognitive_assessment
 
-
 # Page configuration (called only once and at the top)
-st.set_page_config(page_title="MindMetr Child Assessment | تقييم الطفل المرتكز على العقل", page_icon="🧠", layout="wide")
+st.set_page_config(
+    page_title="MindMetr Child Assessment | تقييم الطفل المرتكز على العقل",
+    page_icon="🧠",
+    layout="wide"
+)
 
 # Main title (English and Arabic)
 st.title("Welcome to MindMetr Child Assessment | مرحبًا بكم في تقييم الطفل المرتكز على العقل")
@@ -17,20 +20,20 @@ st.markdown("""
         color: #333; /* Dark gray text color */
         font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun, child-friendly font */
     }
-    
+
     /* Main title styling */
     h1 {
         color: #ff6600; /* Bright orange for headings */
         font-size: 36px; /* Large font size */
         text-align: center; /* Center-align the title */
     }
-    
+
     /* Subtitle styling */
     h2 {
         color: #33cc33; /* Bright green for subheadings */
         font-size: 28px; /* Slightly smaller than main heading */
     }
-    
+
     /* Button styling */
     .stButton>button {
         background-color: #4CAF50; /* Green background for buttons */
@@ -40,7 +43,7 @@ st.markdown("""
         border: none; /* Remove borders */
         font-size: 18px; /* Increase button text size */
     }
-    
+
     /* Input box styling */
     .stTextInput>div>div>input {
         border: 2px solid #ff6600; /* Orange border for input boxes */
@@ -48,19 +51,18 @@ st.markdown("""
         padding: 10px; /* Add padding inside input boxes */
         font-size: 16px; /* Increase input text size */
     }
-    
+
     /* Checkbox styling */
     .stCheckbox>div>div>input {
         accent-color: #33cc33; /* Green checkboxes */
     }
-    
     </style>
 """, unsafe_allow_html=True)
 
-# Adjust image path to WSL-compatible format
-image_base_path = "/mnt/c/Users/tamer/Desktop/MindMetrApp/images/"
+# Adjust image path to relative path for cloud deployment
+image_base_path = "images/"
 
-# Display the MindMetr logo with the WSL path
+# Display the MindMetr logo with the relative path
 st.image(f"{image_base_path}logo.png", width=120)
 
 # Main title and description (English and Arabic)
@@ -143,39 +145,35 @@ fields = [
 # Domain selection using selectbox (Bilingual)
 selected_field = st.selectbox("Select a domain to assess | اختر مجالًا للتقييم:", fields)
 
-# Adjust image path to relative path for cloud deployment
-image_base_path = "images/"
-
 # Display the appropriate assessment or a message based on selection
 if selected_field == "Cognitive Development (التطور المعرفي)":
     cognitive_assessment()  # This will call the cognitive assessment function
 elif selected_field == "Social Interaction (التفاعل الاجتماعي)":
-    st.image(f"{image_base_path}/social.png", width=200)
+    st.image(f"{image_base_path}social.png", width=200)
     st.write("Placeholder: Social Interaction assessment will be shown here. | التقييم الخاص بالتفاعل الاجتماعي سيتم عرضه هنا.")
 elif selected_field == "Critical Thinking (التفكير النقدي)":
-    st.image(f"{image_base_path}/critical.png", width=200)
+    st.image(f"{image_base_path}critical.png", width=200)
     st.write("Placeholder: Critical Thinking assessment will be shown here. | التقييم الخاص بالتفكير النقدي سيتم عرضه هنا.")
 elif selected_field == "Creative Thinking (التفكير الإبداعي)":
-    st.image(f"{image_base_path}/creative.png", width=200)
+    st.image(f"{image_base_path}creative.png", width=200)
     st.write("Placeholder: Creative Thinking assessment will be shown here. | التقييم الخاص بالتفكير الإبداعي سيتم عرضه هنا.")
 elif selected_field == "Emotional Intelligence (الذكاء العاطفي)":
-    st.image(f"{image_base_path}/emotional.png", width=200)
+    st.image(f"{image_base_path}emotional.png", width=200)
     st.write("Placeholder: Emotional Intelligence assessment will be shown here. | التقييم الخاص بالذكاء العاطفي سيتم عرضه هنا.")
 elif selected_field == "Communication Skills (مهارات التواصل)":
-    st.image(f"{image_base_path}/communication.png", width=200)
+    st.image(f"{image_base_path}communication.png", width=200)
     st.write("Placeholder: Communication Skills assessment will be shown here. | التقييم الخاص بمهارات التواصل سيتم عرضه هنا.")
 elif selected_field == "Digital Literacy (الإلمام الرقمي)":
-    st.image(f"{image_base_path}/digital.png", width=200)
+    st.image(f"{image_base_path}digital.png", width=200)
     st.write("Placeholder: Digital Literacy assessment will be shown here. | التقييم الخاص بالإلمام الرقمي سيتم عرضه هنا.")
 elif selected_field == "Self-Management (إدارة الذات)":
-    st.image(f"{image_base_path}/self.png", width=200)
+    st.image(f"{image_base_path}self.png", width=200)
     st.write("Placeholder: Self-Management assessment will be shown here. | التقييم الخاص بإدارة الذات سيتم عرضه هنا.")
 elif selected_field == "Leadership (القيادة)":
-    st.image(f"{image_base_path}/leadership.png", width=200)
+    st.image(f"{image_base_path}leadership.png", width=200)
     st.write("Placeholder: Leadership assessment will be shown here. | التقييم الخاص بالقيادة سيتم عرضه هنا.")
 elif selected_field == "Global Citizenship (المواطنة العالمية)":
-    st.image(f"{image_base_path}/global.png", width=200)
+    st.image(f"{image_base_path}global.png", width=200)
     st.write("Placeholder: Global Citizenship assessment will be shown here. | التقييم الخاص بالمواطنة العالمية سيتم عرضه هنا.")
 else:
     st.write(f"Assessment for {selected_field} is coming soon. | التقييم الخاص بـ {selected_field} قادم قريباً.")
-
