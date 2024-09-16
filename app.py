@@ -143,37 +143,39 @@ fields = [
 # Domain selection using selectbox (Bilingual)
 selected_field = st.selectbox("Select a domain to assess | اختر مجالًا للتقييم:", fields)
 
-# Display the appropriate assessment or a message based on selection
-image_base_path = "images/"  # Adjusted path to be relative
+# Adjust image path to relative path for cloud deployment
+image_base_path = "images/"
 
+# Display the appropriate assessment or a message based on selection
 if selected_field == "Cognitive Development (التطور المعرفي)":
     cognitive_assessment()  # This will call the cognitive assessment function
 elif selected_field == "Social Interaction (التفاعل الاجتماعي)":
-    st.image(f"{image_base_path}social.png", width=200)
+    st.image(f"{image_base_path}/social.png", width=200)
     st.write("Placeholder: Social Interaction assessment will be shown here. | التقييم الخاص بالتفاعل الاجتماعي سيتم عرضه هنا.")
 elif selected_field == "Critical Thinking (التفكير النقدي)":
-    st.image(f"{image_base_path}critical.png", width=200)
+    st.image(f"{image_base_path}/critical.png", width=200)
     st.write("Placeholder: Critical Thinking assessment will be shown here. | التقييم الخاص بالتفكير النقدي سيتم عرضه هنا.")
 elif selected_field == "Creative Thinking (التفكير الإبداعي)":
-    st.image(f"{image_base_path}creative.png", width=200)
+    st.image(f"{image_base_path}/creative.png", width=200)
     st.write("Placeholder: Creative Thinking assessment will be shown here. | التقييم الخاص بالتفكير الإبداعي سيتم عرضه هنا.")
 elif selected_field == "Emotional Intelligence (الذكاء العاطفي)":
-    st.image(f"{image_base_path}emotional.png", width=200)
+    st.image(f"{image_base_path}/emotional.png", width=200)
     st.write("Placeholder: Emotional Intelligence assessment will be shown here. | التقييم الخاص بالذكاء العاطفي سيتم عرضه هنا.")
 elif selected_field == "Communication Skills (مهارات التواصل)":
-    st.image(f"{image_base_path}communication.png", width=200)
+    st.image(f"{image_base_path}/communication.png", width=200)
     st.write("Placeholder: Communication Skills assessment will be shown here. | التقييم الخاص بمهارات التواصل سيتم عرضه هنا.")
 elif selected_field == "Digital Literacy (الإلمام الرقمي)":
-    st.image(f"{image_base_path}digital.png", width=200)
+    st.image(f"{image_base_path}/digital.png", width=200)
     st.write("Placeholder: Digital Literacy assessment will be shown here. | التقييم الخاص بالإلمام الرقمي سيتم عرضه هنا.")
 elif selected_field == "Self-Management (إدارة الذات)":
-    st.image(f"{image_base_path}self.png", width=200)
+    st.image(f"{image_base_path}/self.png", width=200)
     st.write("Placeholder: Self-Management assessment will be shown here. | التقييم الخاص بإدارة الذات سيتم عرضه هنا.")
 elif selected_field == "Leadership (القيادة)":
-    st.image(f"{image_base_path}leadership.png", width=200)
+    st.image(f"{image_base_path}/leadership.png", width=200)
     st.write("Placeholder: Leadership assessment will be shown here. | التقييم الخاص بالقيادة سيتم عرضه هنا.")
 elif selected_field == "Global Citizenship (المواطنة العالمية)":
-    st.image(f"{image_base_path}global.png", width=200)
+    st.image(f"{image_base_path}/global.png", width=200)
     st.write("Placeholder: Global Citizenship assessment will be shown here. | التقييم الخاص بالمواطنة العالمية سيتم عرضه هنا.")
 else:
     st.write(f"Assessment for {selected_field} is coming soon. | التقييم الخاص بـ {selected_field} قادم قريباً.")
+
